@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main-area-right.css">
+    <title>网易云的主要区域</title>
+    <style>
+        .main .area{
+            display:flex;
+            justify-content: space-between;
+            /* height: 500px; */
+            border: 1px solid #d3d3d3;
+            border-width: 0 1px;
+            background-image: url(./images/main_bg.png);
+        }
+        /* 左侧区域 */
+        .main .area-left{
+            width: 729px;
+            padding: 20px 20px 40px;
+        }
+
+        .recommend-section .list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 2px;
+        }
+
+        .recommend-section .list .item{
+            width: 140px;
+            height: 140px;
+            /* background-color: #f00;  */
+            margin-bottom: 30px;
+        }
+
+        /* 公共的CSS */
+    .sprite_01 {
+      background-image: url(./images/icon-sprite02.png);
+      display: inline-block;
+    }
+
+    .sprite_02 {
+      background-image: url(./images/icon-sprite02.png);
+      display: inline-block;
+    }
+
+    .sprite_02_icon_music {
+      width: 14px;
+      height: 11px;
+      background-position: 0 -24px;
+    }
+
+    .sprite_02_icon_play {
+      width: 16px;
+      height: 17px;
+      background-position: 0 0;
+    }
+
+    /* 布局代码 */
+    .recommend-section .list  .item {
+      width: 140px;
+    }
+
+    .recommend-section .list  .item .top {
+      position: relative;
+    }
+
+    .recommend-section .list  .item .top .cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background-image: url(./images/cover-sprite.png);
+      background-position: 0 0;
+    }
+
+    .recommend-section .list  .item .top .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 27px;
+      padding-left: 10px;
+      line-height: 27px;
+
+      font-size: 12px;
+      color: #ccc;
+
+      background-image: url(./images/cover-sprite.png);
+      background-position: 0 -537px;
+    }
+
+    .recommend-section .list  .item .top .info .icon-music {
+      position: relative;
+      top: 1px;
+      /* display: inline-block; */
+      /* width: 14px;
+      height: 11px; */
+
+      /* background-image: url(../images/music_sprite_02.png); */
+      /* background-position: 0 -24px; */
+    }
+
+    .recommend-section .list  .item .top .info .count {
+      margin-left: 4px;
+    }
+
+    .recommend-section .list  .item .top .info .icon-play {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto 0;
+
+      /* display: inline-block; */
+      /* width: 16px;
+      height: 17px; */
+      /* background-image: url(../images/music_sprite_02.png); */
+      /* background-position: 0 0; */
+    }
+
+
+    /* 底部的样式 */
+    .recommend-section .list .item .bottom {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .recommend-section .list .item .bottom:hover {
+      text-decoration: underline;
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="area wrapper-02">
+            <div class="area-left">
+                <div class="recommend-section">
+                    <div class="header_type_02">
+                        <div class="area_left">
+                            <h4 class="title">热门推荐</h4>
+                            <ul class="keywords">
+                                <li><a class="item" href="#">华语</a></li>
+                                <li class="line">|</li>
+                                <li><a class="item" href="#">流行</a></li>
+                                <li class="line">|</li>
+                                <li><a class="item" href="#">摇滚</a></li>
+                                <li class="line">|</li>
+                                <li><a class="item" href="#">民谣</a></li>
+                                <li class="line">|</li>
+                                <li><a class="item" href="#">电子</a></li>
+                            </ul>
+                        </div>
+                        <div class="area_right">
+                            <a class="more" href="#">更多</a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            <div class="top">
+                              <img src="https://p1.music.126.net/7raq6o5njEHi_Oo4NoM7Ig==/109951168117621558.jpg?param=140y140" alt="音乐封面">
+                              <a class="cover" href="#"></a>
+                              <div class="info">
+                                <i class="icon_sprite icon_sprite_music icon-music"></i>
+                                <span class="count">62万</span>
+                                <i class="icon_sprite icon_sprite_play_01 icon-play"></i>
+                              </div>
+                            </div>
+                            <a class="bottom" href="#">
+                              天气好的话，把耳机分给我一半吧
+                            </a>
+                            <i class="sprite_02 sprite_02_icon_play"></i>
+                            <i class="sprite_02 sprite_02_icon_music"></i>
+                        </div>
+                        <div class="item">2</div>
+                        <div class="item">3</div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                        <div class="item">8</div>
+                    </div>
+                </div>
+                <div class="disc-section">
+                    <div class="header_type_02">
+                        <div class="area_left">
+                            <h2 class="title">新碟上架</h2>
+                        </div>
+                        <div class="area_right">
+                            <a href="#" class="more">更多</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="area-right">
+                <div class="user-login">
+                    <p class="desc">登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+                    <a class="btn" href="#">用户登录</a>
+                </div>
+                <div class="settle-singer">
+                    <div class="header_type_01">
+                        <h3 class="title">入驻歌手</h3>
+                        <a class="more" href="#">查看全部 &ge;</a>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./images/singer_01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEI</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                            </a>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./images/singer_01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEI</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                            </a>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./images/singer_01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEI</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                            </a>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./images/singer_01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEI</div>
+                                    <div class="desc">台湾歌手张惠妹</div>
+                                </div>
+                            </a>
+                            <a href="#" class="item">
+                                <div class="album">
+                                    <img src="./images/singer_01.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="singer">张惠妹aMEI</div>
+                                    <div class="desc">台湾歌手张惠妹sdsdssdsdsd</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hot-anchor">
+                    <div class="header_type_01">
+                        <h3 class="title">热门主播</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

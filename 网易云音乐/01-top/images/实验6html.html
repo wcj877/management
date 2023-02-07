@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://dbfiddle.uk/NO5REbYn -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-editor.cm-focused {outline: 1px dotted #212121;}
+.ͼ1.cm-editor {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; min-height: 100%; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 4px;}
+.ͼ1 .cm-selectionLayer {z-index: -1; contain: size style;}
+.ͼ1 .cm-selectionBackground {position: absolute;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {z-index: 100; contain: size style; pointer-events: none;}
+.ͼ1.cm-focused .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {position: absolute; border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1.cm-focused .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; left: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ5 {color: #7a757a;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+</style>
+  <title>SQL Server 2022 | db&lt;&gt;fiddle</title>
+  <meta name="description" content="a free online environment to experiment with SQL and other code">
+  <meta property="og:title" content="SQL Server 2022">
+  <meta property="og:description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://cdn.dbfiddle.uk/favicon.71f8e287.ico">
+  <link href="./实验6html_files/reset.c4a60be7.css" rel="stylesheet">
+  <link href="./实验6html_files/global.2531dfe9.css" rel="stylesheet">
+  <link href="./实验6html_files/fiddle.6f12d1ca.css" rel="stylesheet">
+  <link href="./实验6html_files/qp.8db7ca63.css" rel="stylesheet">
+  <script src="./实验6html_files/codemirror.c1b731e2.js.下载" defer=""></script>
+  <script src="./实验6html_files/qp.ea500846.js.下载" defer=""></script>
+  <script src="./实验6html_files/fiddle.6be67266.js.下载" defer=""></script>
+  <template></template>
+</head>
+<body>
+  <svg>
+    <defs>
+      <symbol id="plus" viewBox="0 0 10000 16" preserveAspectRatio="xMinYMid slice">
+        <title>add batch</title>
+        <rect x="0.5" y="0.5" width="15" height="15" ry="3" rx="3" stroke="black" fill-opacity="0"></rect>
+        <line x1="8" y1="3.5" x2="8" y2="12.5" stroke="black" stroke-width="1.5"></line>
+        <line x1="3.5" y1="8" x2="12.5" y2="8" stroke="black" stroke-width="1.5"></line>
+        <line x1="16" y1="8" x2="10000" y2="8" stroke="black"></line>
+      </symbol>
+      <symbol id="hamburger" viewBox="0 0 16 16">
+        <line x1="4" y1="4.5" x2="12" y2="4.5" stroke="black" stroke-width="1.5"></line>
+        <line x1="4" y1="8" x2="12" y2="8" stroke="black" stroke-width="1.5"></line>
+        <line x1="4" y1="11.5" x2="12" y2="11.5" stroke="black" stroke-width="1.5"></line>
+      </symbol>
+      <symbol id="remove" viewBox="0 0 16 16">
+        <title>remove batch</title>
+        <rect x="0.5" y="0.5" width="15" height="15" ry="3" rx="3" stroke="black" fill-opacity="0"></rect>
+        <path d="M 12 4.5 L 11 12.5 L 5 12.5 L 4 4.5 Z" stroke="black" stroke-width="1.5" stroke-linejoin="round" fill-opacity="0"></path>
+        <line x1="7" y1="3.5" x2="9" y2="3.5" stroke="black" stroke-width="1.5"></line>
+        <line x1="6.5" y1="11.5" x2="6" y2="6.5" stroke="black" stroke-width="0.5"></line>
+        <line x1="8" y1="11.5" x2="8" y2="6.5" stroke="black" stroke-width="0.5"></line>
+        <line x1="9.5" y1="11.5" x2="10" y2="6.5" stroke="black" stroke-width="0.5"></line>
+      </symbol>
+      <symbol id="split" viewBox="0 0 16 16">
+        <title>split batch</title>
+        <rect x="0.5" y="0.5" width="15" height="15" ry="3" rx="3" stroke="black" fill-opacity="0"></rect>
+        <line x1="3.5" y1="4.5" x2="12" y2="4.5" stroke="black" stroke-width="1.5"></line>
+        <line x1="7" y1="8" x2="12" y2="8" stroke="black" stroke-width="1.5"></line>
+        <line x1="7" y1="11.5" x2="12" y2="11.5" stroke="black" stroke-width="1.5"></line>
+        <line x1="7" y1="4.5" x2="7" y2="11.5" stroke="black" stroke-width="1.5"></line>
+      </symbol>
+      <symbol id="show" viewBox="0 0 10000 16" preserveAspectRatio="xMinYMid slice">
+      <title>show hidden batches</title>
+        <rect x="0.5" y="0.5" width="15" height="15" ry="3" rx="3" stroke="black" fill-opacity="0"></rect>
+        <path d="M 3 8 A 5.5 5.5 0 0 1 13 8 M 13 8 A 5.5 5.5 0 0 1 3 8" stroke="black" stroke-width="1.5" fill-opacity="0"></path>
+        <circle cx="8" cy="8" r="1.5" stroke="black" fill-opacity="0"></circle>
+        <line x1="16" y1="8" x2="10000" y2="8" stroke="black"></line>
+      </symbol>
+      <symbol id="hide" viewBox="0 0 16 16">
+        <title>hide batch</title>
+        <rect x="0.5" y="0.5" width="15" height="15" ry="3" rx="3" stroke="black" fill-opacity="0"></rect>
+        <path d="M 3 8 A 5.5 5.5 0 0 1 13 8 M 13 8 A 5.5 5.5 0 0 1 3 8" stroke="black" stroke-width="1.5" fill-opacity="0"></path>
+        <circle cx="8" cy="8" r="1.5" stroke="black" fill-opacity="0"></circle>
+        <line x1="13" y1="3" x2="3" y2="13" stroke-width="2" stroke="white"></line>
+        <line x1="12.5" y1="3.5" x2="3.5" y2="12.5" stroke="black"></line>
+      </symbol>
+      <symbol id="spinner" viewBox="-1 -1 12 12">
+        <circle cx="0" cy="5" r="1"></circle>
+        <circle cx="1.464" cy="1.464" r="1"></circle>
+        <circle cx="5" cy="0" r="1"></circle>
+        <circle cx="8.536" cy="1.464" r="1"></circle>
+        <circle cx="10" cy="5" r="1"></circle>
+        <circle cx="8.536" cy="8.536" r="1"></circle>
+        <circle cx="5" cy="10" r="1"></circle>
+        <circle cx="1.464" cy="8.536" r="1"></circle>
+      </symbol></defs></svg>
+    
+  
+  <header>
+    <div>
+      <a href="https://dbfiddle.uk/">db&lt;&gt;fiddle</a>
+      <select id="engine">
+        <option value="db2" data-separator=";">Db2</option>
+        <option value="firebird" data-separator=";">Firebird</option>
+        <option value="mariadb" data-separator=";">MariaDB</option>
+        <option value="mysql" data-separator=";">MySQL</option>
+        <option value="nodejs" data-separator=";">Node.js</option>
+        <option value="oracle" data-separator=";">Oracle</option>
+        <option value="postgres" data-separator=";">Postgres</option>
+        <option value="sqlite" data-separator=";">SQLite</option>
+        <option value="sqlserver" data-separator="^\s*go\s*$" selected="">SQL Server</option>
+        <option value="yugabytedb" data-separator=";">YugabyteDB</option>
+      </select>
+      <select class="version hidden" data-engine="db2">
+        <option value="11.1" selected="">Developer-C 11.1</option>
+      </select>
+      <select class="version hidden" data-engine="firebird">
+        <option value="3.0">3.0</option>
+        <option value="4.0" selected="">4.0</option>
+      </select>
+      <select class="version hidden" data-engine="mariadb">
+        <option value="10.2" disabled="">10.2</option>
+        <option value="10.3">10.3</option>
+        <option value="10.4">10.4</option>
+        <option value="10.5">10.5</option>
+        <option value="10.6" selected="">10.6</option>
+        <option value="10.7">10.7</option>
+        <option value="10.8">10.8</option>
+        <option value="10.9">10.9</option>
+      </select>
+      <select class="version hidden" data-engine="mysql">
+        <option value="5.5">5.5</option>
+        <option value="5.6">5.6</option>
+        <option value="5.7">5.7</option>
+        <option value="8.0" selected="">8.0</option>
+      </select>
+      <select class="version hidden" data-engine="nodejs">
+        <option value="18" selected="">18</option>
+      </select>
+      <select class="version hidden" data-engine="oracle">
+        <option value="11.2">11g Release 2</option>
+        <option value="18">18c</option>
+        <option value="21" selected="">21c</option>
+      </select>
+      <select class="version hidden" data-engine="postgres">
+        <option value="8.4" disabled="">8.4</option>
+        <option value="9.3">9.3</option>
+        <option value="9.4">9.4</option>
+        <option value="9.5">9.5</option>
+        <option value="9.6">9.6</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15" selected="">15</option>
+      </select>
+      <select class="version hidden" data-engine="sqlite">
+        <option value="3.8" disabled="">3.8</option>
+        <option value="3.16" disabled="">3.16</option>
+        <option value="3.27">3.27</option>
+        <option value="3.39" selected="">3.39</option>
+      </select>
+      <select class="version" data-engine="sqlserver">
+        <option value="2012" disabled="">2012</option>
+        <option value="2014">2014</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2017l">2017 (Linux)</option>
+        <option value="2019">2019</option>
+        <option value="2019l">2019 (Linux)</option>
+        <option value="2022" selected="">2022</option>
+      </select>
+      <select class="version hidden" data-engine="yugabytedb">
+        <option value="2.6">2.6</option>
+        <option value="2.8" selected="">2.8</option>
+      </select>
+      <select class="sample hidden empty" data-engine="db2" data-version="11.1">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="firebird" data-version="3.0">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="firebird" data-version="4.0">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.2">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.3">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.4">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.5">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.6">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.7">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.8">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mariadb" data-version="10.9">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mysql" data-version="5.5">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mysql" data-version="5.6">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="mysql" data-version="5.7">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden" data-engine="mysql" data-version="8.0">
+        <option value="" selected="">no sample DB</option>
+        <option value="sakila">Sakila</option>
+      </select>
+      <select class="sample hidden empty" data-engine="nodejs" data-version="18">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="oracle" data-version="11.2">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="oracle" data-version="18">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="oracle" data-version="21">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="8.4">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="9.3">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="9.4">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="9.5">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="9.6">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="10">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="11">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="12">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="13">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="14">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="postgres" data-version="15">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlite" data-version="3.8">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlite" data-version="3.16">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlite" data-version="3.27">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlite" data-version="3.39">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlserver" data-version="2012">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlserver" data-version="2014">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlserver" data-version="2016">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlserver" data-version="2017">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlserver" data-version="2017l">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden" data-engine="sqlserver" data-version="2019">
+        <option value="" selected="">no sample DB</option>
+        <option value="adventureworks">AdventureWorks</option>
+      </select>
+      <select class="sample hidden empty" data-engine="sqlserver" data-version="2019l">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample" data-engine="sqlserver" data-version="2022">
+        <option value="" selected="">no sample DB</option>
+        <option value="adventureworks">AdventureWorks</option>
+      </select>
+      <select class="sample hidden empty" data-engine="yugabytedb" data-version="2.6">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <select class="sample hidden empty" data-engine="yugabytedb" data-version="2.8">
+        <option value="" selected="">no sample DB</option>
+      </select>
+      <button id="run" accesskey="r"><span>run</span><svg class="spinner"><use href="#spinner"></use></svg></button>
+      <button id="markdown" accesskey="m">markdown</button>
+    </div>
+    <div>
+      <a href="https://topanswers.xyz/fiddle?q=2035">feedback</a>
+      <a href="https://topanswers.xyz/fiddle?q=2036">about</a>
+    </div>
+  </header>
+  <main>
+    <header>
+      By using db&lt;&gt;fiddle, you agree to license everything you submit by <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons CC0</a>.
+    </header>
+    <div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+create table Student
+(Sno char(10) primary key,
+ Sname varchar(20),
+ Ssex char(2),
+ Sage smallint,
+ Sdept varchar(20));
+
+ create table Course
+ (Cno char(10) primary key,
+  Cname varchar(20),
+  Cpno char(10),
+  Ccredit smallint);
+
+  create table SC
+  (Sno char(10),
+   Cno char(10),
+   Grade smallint,
+   primary key (Sno,Cno)
+   )
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 266px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 14px;">1</div><div class="cm-gutterElement" style="height: 14px;">2</div><div class="cm-gutterElement" style="height: 14px;">3</div><div class="cm-gutterElement" style="height: 14px;">4</div><div class="cm-gutterElement" style="height: 14px;">5</div><div class="cm-gutterElement" style="height: 14px;">6</div><div class="cm-gutterElement" style="height: 14px;">7</div><div class="cm-gutterElement" style="height: 14px;">8</div><div class="cm-gutterElement" style="height: 14px;">9</div><div class="cm-gutterElement" style="height: 14px;">10</div><div class="cm-gutterElement" style="height: 14px;">11</div><div class="cm-gutterElement" style="height: 14px;">12</div><div class="cm-gutterElement" style="height: 14px;">13</div><div class="cm-gutterElement" style="height: 14px;">14</div><div class="cm-gutterElement" style="height: 14px;">15</div><div class="cm-gutterElement" style="height: 14px;">16</div><div class="cm-gutterElement" style="height: 14px;">17</div><div class="cm-gutterElement" style="height: 14px;">18</div><div class="cm-gutterElement" style="height: 14px;">19</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 14px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 84px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 14px; margin-top: 70px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">create</span> <span class="ͼb">table</span> Student</div><div class="cm-line">(Sno <span class="ͼi">char</span>(<span class="ͼd">10</span>) <span class="ͼb">primary</span> <span class="ͼb">key</span>,</div><div class="cm-line"> Sname <span class="ͼi">varchar</span>(<span class="ͼd">20</span>),</div><div class="cm-line"> Ssex <span class="ͼi">char</span>(<span class="ͼd">2</span>),</div><div class="cm-line"> Sage <span class="ͼi">smallint</span>,</div><div class="cm-line"> Sdept <span class="ͼi">varchar</span>(<span class="ͼd">20</span>));</div><div class="cm-line"><br></div><div class="cm-line"> <span class="ͼb">create</span> <span class="ͼb">table</span> Course</div><div class="cm-line"> (Cno <span class="ͼi">char</span>(<span class="ͼd">10</span>) <span class="ͼb">primary</span> <span class="ͼb">key</span>,</div><div class="cm-line">  Cname <span class="ͼi">varchar</span>(<span class="ͼd">20</span>),</div><div class="cm-line">  Cpno <span class="ͼi">char</span>(<span class="ͼd">10</span>),</div><div class="cm-line">  Ccredit <span class="ͼi">smallint</span>);</div><div class="cm-line"><br></div><div class="cm-line">  <span class="ͼb">create</span> <span class="ͼb">table</span> SC</div><div class="cm-line">  (Sno <span class="ͼi">char</span>(<span class="ͼd">10</span>),</div><div class="cm-line">   Cno <span class="ͼi">char</span>(<span class="ͼd">10</span>),</div><div class="cm-line">   Grade <span class="ͼi">smallint</span>,</div><div class="cm-line">   <span class="ͼb">primary</span> <span class="ͼb">key</span> (Sno,Cno)</div><div class="cm-line">   )</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 35px; top: 2.40002px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown=""></div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+insert into Student values
+ (&#39;S001&#39;,&#39;Smith&#39;,&#39;m&#39;,18,&#39;CS&#39;),
+ (&#39;S002&#39;,&#39;Ketty&#39;,&#39;f&#39;,19,&#39;MA&#39;),
+ (&#39;S003&#39;,&#39;Mike&#39;,&#39;f&#39;,18,&#39;IS&#39;),
+ (&#39;S004&#39;,&#39;Tom&#39;,&#39;m&#39;,20,&#39;CS&#39;),
+ (&#39;S005&#39;,&#39;玛丽&#39;,&#39;f&#39;,17,&#39;CS&#39;);
+ 
+ insert into Course values
+ (&#39;C01&#39;,&#39;DB&#39;,null,2),
+ (&#39;C02&#39;,&#39;Oracle&#39;,&#39;C01&#39;,3),
+ (&#39;C03&#39;,&#39;DB_NAME&#39;,NULL,4),
+ (&#39;C04&#39;,&#39;移动开发&#39;,&#39;C03&#39;,2),
+ (&#39;C05&#39;,&#39;软件工程&#39;,&#39;C04&#39;,2);
+ 
+ insert into SC values
+ (&#39;S001&#39;,&#39;C01&#39;,91),
+ (&#39;S001&#39;,&#39;C02&#39;,56),
+ (&#39;S002&#39;,&#39;C01&#39;,45),
+ (&#39;S004&#39;,&#39;C01&#39;,95),
+ (&#39;S002&#39;,&#39;C02&#39;,null),
+ (&#39;S001&#39;,&#39;C04&#39;,46),
+ (&#39;S001&#39;,&#39;C03&#39;,53),
+ (&#39;S003&#39;,&#39;C01&#39;,35),
+ (&#39;S005&#39;,&#39;C02&#39;,67),
+ (&#39;S005&#39;,&#39;C04&#39;,80),
+ (&#39;S005&#39;,&#39;C03&#39;,43);
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 473.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div><div class="cm-gutterElement" style="height: 18.2px;">2</div><div class="cm-gutterElement" style="height: 18.2px;">3</div><div class="cm-gutterElement" style="height: 18.2px;">4</div><div class="cm-gutterElement" style="height: 18.2px;">5</div><div class="cm-gutterElement" style="height: 18.2px;">6</div><div class="cm-gutterElement" style="height: 18.2px;">7</div><div class="cm-gutterElement" style="height: 18.2px;">8</div><div class="cm-gutterElement" style="height: 18.2px;">9</div><div class="cm-gutterElement" style="height: 18.2px;">10</div><div class="cm-gutterElement" style="height: 18.2px;">11</div><div class="cm-gutterElement" style="height: 18.2px;">12</div><div class="cm-gutterElement" style="height: 18.2px;">13</div><div class="cm-gutterElement" style="height: 18.2px;">14</div><div class="cm-gutterElement" style="height: 18.2px;">15</div><div class="cm-gutterElement" style="height: 18.2px;">16</div><div class="cm-gutterElement" style="height: 18.2px;">17</div><div class="cm-gutterElement" style="height: 18.2px;">18</div><div class="cm-gutterElement" style="height: 18.2px;">19</div><div class="cm-gutterElement" style="height: 18.2px;">20</div><div class="cm-gutterElement" style="height: 18.2px;">21</div><div class="cm-gutterElement" style="height: 18.2px;">22</div><div class="cm-gutterElement" style="height: 18.2px;">23</div><div class="cm-gutterElement" style="height: 18.2px;">24</div><div class="cm-gutterElement" style="height: 18.2px;">25</div><div class="cm-gutterElement" style="height: 18.2px;">26</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 18.2px; margin-top: 109.2px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 18.2px; margin-top: 109.2px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">insert</span> <span class="ͼb">into</span> Student <span class="ͼb">values</span></div><div class="cm-line"> (<span class="ͼe">'S001'</span>,<span class="ͼe">'Smith'</span>,<span class="ͼe">'m'</span>,<span class="ͼd">18</span>,<span class="ͼe">'CS'</span>),</div><div class="cm-line"> (<span class="ͼe">'S002'</span>,<span class="ͼe">'Ketty'</span>,<span class="ͼe">'f'</span>,<span class="ͼd">19</span>,<span class="ͼe">'MA'</span>),</div><div class="cm-line"> (<span class="ͼe">'S003'</span>,<span class="ͼe">'Mike'</span>,<span class="ͼe">'f'</span>,<span class="ͼd">18</span>,<span class="ͼe">'IS'</span>),</div><div class="cm-line"> (<span class="ͼe">'S004'</span>,<span class="ͼe">'Tom'</span>,<span class="ͼe">'m'</span>,<span class="ͼd">20</span>,<span class="ͼe">'CS'</span>),</div><div class="cm-line"> (<span class="ͼe">'S005'</span>,<span class="ͼe">'玛丽'</span>,<span class="ͼe">'f'</span>,<span class="ͼd">17</span>,<span class="ͼe">'CS'</span>);</div><div class="cm-line"> </div><div class="cm-line"> <span class="ͼb">insert</span> <span class="ͼb">into</span> Course <span class="ͼb">values</span></div><div class="cm-line"> (<span class="ͼe">'C01'</span>,<span class="ͼe">'DB'</span>,<span class="ͼb">null</span>,<span class="ͼd">2</span>),</div><div class="cm-line"> (<span class="ͼe">'C02'</span>,<span class="ͼe">'Oracle'</span>,<span class="ͼe">'C01'</span>,<span class="ͼd">3</span>),</div><div class="cm-line"> (<span class="ͼe">'C03'</span>,<span class="ͼe">'DB_NAME'</span>,<span class="ͼb">NULL</span>,<span class="ͼd">4</span>),</div><div class="cm-line"> (<span class="ͼe">'C04'</span>,<span class="ͼe">'移动开发'</span>,<span class="ͼe">'C03'</span>,<span class="ͼd">2</span>),</div><div class="cm-line"> (<span class="ͼe">'C05'</span>,<span class="ͼe">'软件工程'</span>,<span class="ͼe">'C04'</span>,<span class="ͼd">2</span>);</div><div class="cm-line"> </div><div class="cm-line"> <span class="ͼb">insert</span> <span class="ͼb">into</span> SC <span class="ͼb">values</span></div><div class="cm-line"> (<span class="ͼe">'S001'</span>,<span class="ͼe">'C01'</span>,<span class="ͼd">91</span>),</div><div class="cm-line"> (<span class="ͼe">'S001'</span>,<span class="ͼe">'C02'</span>,<span class="ͼd">56</span>),</div><div class="cm-line"> (<span class="ͼe">'S002'</span>,<span class="ͼe">'C01'</span>,<span class="ͼd">45</span>),</div><div class="cm-line"> (<span class="ͼe">'S004'</span>,<span class="ͼe">'C01'</span>,<span class="ͼd">95</span>),</div><div class="cm-line"> (<span class="ͼe">'S002'</span>,<span class="ͼe">'C02'</span>,<span class="ͼb">null</span>),</div><div class="cm-line"> (<span class="ͼe">'S001'</span>,<span class="ͼe">'C04'</span>,<span class="ͼd">46</span>),</div><div class="cm-line"> (<span class="ͼe">'S001'</span>,<span class="ͼe">'C03'</span>,<span class="ͼd">53</span>),</div><div class="cm-line"> (<span class="ͼe">'S003'</span>,<span class="ͼe">'C01'</span>,<span class="ͼd">35</span>),</div><div class="cm-line"> (<span class="ͼe">'S005'</span>,<span class="ͼe">'C02'</span>,<span class="ͼd">67</span>),</div><div class="cm-line"> (<span class="ͼe">'S005'</span>,<span class="ͼe">'C04'</span>,<span class="ͼd">80</span>),</div><div class="cm-line"> (<span class="ͼe">'S005'</span>,<span class="ͼe">'C03'</span>,<span class="ͼd">43</span>);</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 35px; top: 2.40002px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="``` status
+21 rows affected
+```
+"><pre><code class="language-status">21 rows affected
+</code></pre>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select * from sc
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> * <span class="ͼb">from</span> sc</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| Sno | Cno | Grade |
+| :---|:---|-----:|
+| S001       | C01        | 91 |
+| S001       | C02        | 56 |
+| S001       | C03        | 53 |
+| S001       | C04        | 46 |
+| S002       | C01        | 45 |
+| S002       | C02        | *null* |
+| S003       | C01        | 35 |
+| S004       | C01        | 95 |
+| S005       | C02        | 67 |
+| S005       | C03        | 43 |
+| S005       | C04        | 80 |
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">Sno</th>
+<th style="text-align:left">Cno</th>
+<th style="text-align:right">Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">91</td>
+</tr>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C02</td>
+<td style="text-align:right">56</td>
+</tr>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C03</td>
+<td style="text-align:right">53</td>
+</tr>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C04</td>
+<td style="text-align:right">46</td>
+</tr>
+<tr>
+<td style="text-align:left">S002</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">45</td>
+</tr>
+<tr>
+<td style="text-align:left">S002</td>
+<td style="text-align:left">C02</td>
+<td style="text-align:right"><em>null</em></td>
+</tr>
+<tr>
+<td style="text-align:left">S003</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">35</td>
+</tr>
+<tr>
+<td style="text-align:left">S004</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">95</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:left">C02</td>
+<td style="text-align:right">67</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:left">C03</td>
+<td style="text-align:right">43</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:left">C04</td>
+<td style="text-align:right">80</td>
+</tr>
+</tbody>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+create view vcg 
+as
+select sc.sno,sc.cno,grade from sc,course
+where sc.cno=course.cno and grade&lt;60;
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 72.8px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div><div class="cm-gutterElement" style="height: 18.2px;">2</div><div class="cm-gutterElement" style="height: 18.2px;">3</div><div class="cm-gutterElement" style="height: 18.2px;">4</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">create</span> <span class="ͼb">view</span> vcg </div><div class="cm-line"><span class="ͼb">as</span></div><div class="cm-line"><span class="ͼb">select</span> sc.sno,sc.cno,grade <span class="ͼb">from</span> sc,course</div><div class="cm-line"><span class="ͼb">where</span> sc.cno=course.cno <span class="ͼb">and</span> grade&lt;<span class="ͼd">60</span>;</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 34.2px; top: 2.40001px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown=""></div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select * from vcg 
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> * <span class="ͼb">from</span> vcg </div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| sno | cno | grade |
+| :---|:---|-----:|
+| S001       | C02        | 56 |
+| S001       | C03        | 53 |
+| S001       | C04        | 46 |
+| S002       | C01        | 45 |
+| S003       | C01        | 35 |
+| S005       | C03        | 43 |
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">sno</th>
+<th style="text-align:left">cno</th>
+<th style="text-align:right">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C02</td>
+<td style="text-align:right">56</td>
+</tr>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C03</td>
+<td style="text-align:right">53</td>
+</tr>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C04</td>
+<td style="text-align:right">46</td>
+</tr>
+<tr>
+<td style="text-align:left">S002</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">45</td>
+</tr>
+<tr>
+<td style="text-align:left">S003</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">35</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:left">C03</td>
+<td style="text-align:right">43</td>
+</tr>
+</tbody>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+update vcg set grade=grade+5 
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">update</span> vcg <span class="ͼb">set</span> grade=grade+<span class="ͼd">5</span> </div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="``` status
+6 rows affected
+```
+"><pre><code class="language-status">6 rows affected
+</code></pre>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select * from vcg 
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> * <span class="ͼb">from</span> vcg </div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| sno | cno | grade |
+| :---|:---|-----:|
+| S001       | C03        | 58 |
+| S001       | C04        | 51 |
+| S002       | C01        | 50 |
+| S003       | C01        | 40 |
+| S005       | C03        | 48 |
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">sno</th>
+<th style="text-align:left">cno</th>
+<th style="text-align:right">grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C03</td>
+<td style="text-align:right">58</td>
+</tr>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">C04</td>
+<td style="text-align:right">51</td>
+</tr>
+<tr>
+<td style="text-align:left">S002</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">50</td>
+</tr>
+<tr>
+<td style="text-align:left">S003</td>
+<td style="text-align:left">C01</td>
+<td style="text-align:right">40</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:left">C03</td>
+<td style="text-align:right">48</td>
+</tr>
+</tbody>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+delete from vcg where grade&lt;40
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">delete</span> <span class="ͼb">from</span> vcg <span class="ͼb">where</span> grade&lt;<span class="ͼd">40</span></div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="``` error
+Msg 4405 Level 16 State 1 Line 1
+View or function &#39;vcg&#39; is not updatable because the modification affects multiple base tables.
+```
+"><pre><code class="language-error">Msg 4405 Level 16 State 1 Line 1
+View or function 'vcg' is not updatable because the modification affects multiple base tables.
+</code></pre>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+create view vsumc as
+select sc.sno,sum(Ccredit) as ssumc
+from sc,course
+where sc.cno=course.cno and grade&gt;=60
+group by sc.sno
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 91px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div><div class="cm-gutterElement" style="height: 18.2px;">2</div><div class="cm-gutterElement" style="height: 18.2px;">3</div><div class="cm-gutterElement" style="height: 18.2px;">4</div><div class="cm-gutterElement" style="height: 18.2px;">5</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">create</span> <span class="ͼb">view</span> vsumc <span class="ͼb">as</span></div><div class="cm-line"><span class="ͼb">select</span> sc.sno,sum(Ccredit) <span class="ͼb">as</span> ssumc</div><div class="cm-line"><span class="ͼb">from</span> sc,course</div><div class="cm-line"><span class="ͼb">where</span> sc.cno=course.cno <span class="ͼb">and</span> grade&gt;=<span class="ͼd">60</span></div><div class="cm-line"><span class="ͼb">group</span> <span class="ͼb">by</span> sc.sno</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 34.2px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown=""></div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select * from vsumc
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> * <span class="ͼb">from</span> vsumc</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.4px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| sno | ssumc |
+| :---|-----:|
+| S001       | 5 |
+| S004       | 2 |
+| S005       | 5 |
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">sno</th>
+<th style="text-align:right">ssumc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left">S004</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:right">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select sname,ssex from student,vsumc where student.sno=vsumc.sno and ssumc&gt;12
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> sname,ssex <span class="ͼb">from</span> student,vsumc <span class="ͼb">where</span> student.sno=vsumc.sno <span class="ͼb">and</span> ssumc&gt;<span class="ͼd">12</span></div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.39999px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| sname | ssex |
+| :-----|:----|
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">sname</th>
+<th style="text-align:left">ssex</th>
+</tr>
+</thead>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select vsumc.sno,sname,ssex,sage,sdept from vsumc,student where vsumc.sno=student.sno and ssumc&gt;=all(select ssumc from vsumc)
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 18.2px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> vsumc.sno,sname,ssex,sage,sdept <span class="ͼb">from</span> vsumc,student <span class="ͼb">where</span> vsumc.sno=student.sno <span class="ͼb">and</span> ssumc&gt;=<span class="ͼb">all</span>(<span class="ͼb">select</span> ssumc <span class="ͼb">from</span> vsumc)</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 33.4px; top: 2.40001px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| sno | sname | ssex | sage | sdept |
+| :---|:-----|:----|----:|:-----|
+| S001       | Smith | m  | 18 | CS |
+| S005       | ?? | f  | 17 | CS |
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">sno</th>
+<th style="text-align:left">sname</th>
+<th style="text-align:left">ssex</th>
+<th style="text-align:right">sage</th>
+<th style="text-align:left">sdept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S001</td>
+<td style="text-align:left">Smith</td>
+<td style="text-align:left">m</td>
+<td style="text-align:right">18</td>
+<td style="text-align:left">CS</td>
+</tr>
+<tr>
+<td style="text-align:left">S005</td>
+<td style="text-align:left">??</td>
+<td style="text-align:left">f</td>
+<td style="text-align:right">17</td>
+<td style="text-align:left">CS</td>
+</tr>
+</tbody>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+      <div class="line ">
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+        <div class="batch">
+          <div class="controls">
+            <div class="icon hamburger"><svg><use href="#hamburger"></use></svg></div>
+            <div class="icon remove hidden" title="remove batch"><svg><use href="#remove"></use></svg></div>
+            <div class="icon split hidden" title="split batch"><svg><use href="#split"></use></svg></div>
+            <div class="icon hide hidden" title="hide batch"><svg><use href="#hide"></use></svg></div>
+          </div>
+          <div class="io">
+            <div class="input" data-markdown="``` 
+select vsumc.sno,ssumc,avg(grade) as savg from vsumc,sc where vsumc.sno=sc.sno 
+group by vsumc.sno,ssumc
+having avg(grade)&gt;65;
+```
+"><div class="cm-editor ͼ1 ͼ2 ͼ4"><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 54.6px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;">1</div><div class="cm-gutterElement" style="height: 18.2px;">2</div><div class="cm-gutterElement" style="height: 18.2px;">3</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 18.2px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼb">select</span> vsumc.sno,ssumc,avg(grade) <span class="ͼb">as</span> savg <span class="ͼb">from</span> vsumc,sc <span class="ͼb">where</span> vsumc.sno=sc.sno </div><div class="cm-line"><span class="ͼb">group</span> <span class="ͼb">by</span> vsumc.sno,ssumc</div><div class="cm-line"><span class="ͼb">having</span> avg(grade)&gt;<span class="ͼd">65</span>;</div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 34.2px; top: 2.39999px; height: 12.8px;"></div></div></div></div></div>
+            <div class="output" data-markdown="| sno | ssumc | savg |
+| :---|-----:|----:|
+| S004       | 2 | 95 |
+
+"><table>
+<thead>
+<tr>
+<th style="text-align:left">sno</th>
+<th style="text-align:right">ssumc</th>
+<th style="text-align:right">savg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S004</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">95</td>
+</tr>
+</tbody>
+</table>
+</div>
+          </div>
+        </div>
+        <div class="icon show" title="show hidden batches"><svg><use href="#show"></use></svg></div>
+        <div class="icon plus" title="add batch"><svg><use href="#plus"></use></svg></div>
+      </div>
+    </div>
+    <footer>
+      <a href="https://www.erikdarlingdata.com/"><img src="./实验6html_files/darling.9c2a2c10.png" alt="Erik Darling Data"><div>awesome db&lt;&gt;fiddle sponsor</div></a>
+      <a href="https://topanswers.xyz/tex?q=716" class="words"><img src="./实验6html_files/tex.028f3709.png" alt="TopTeX Q&amp;A on TopAnswers"><div>All your TeX questions answered!<br><br>try the friendly, expert, 'TopTeX' community</div><div>TopAnswers</div></a>
+      <a href="https://topanswers.xyz/fiddle?q=2108" class="words"><div>advertise here</div><div>support db&lt;&gt;fiddle</div></a>
+    </footer>
+  </main>
+  <footer>
+    <div><a href="https://dbfiddle.uk/">db&lt;&gt;fiddle</a> © 2017-2022 Jack Douglas</div>
+    <div><a href="https://twitter.com/dbfiddleuk">twitter</a></div>
+  </footer>
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

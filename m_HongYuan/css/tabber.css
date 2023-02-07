@@ -1,0 +1,16 @@
+.tabber {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  border-top: 1px solid #ddd;
+  height: 50px;
+}
+.tabber .item {
+  flex: 1;
+  text-align: center;
+}
+.tabber .item img {
+  width: 48px;
+}

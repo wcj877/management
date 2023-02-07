@@ -1,0 +1,19 @@
+body, div, h1, h2, h3, p, ol, ul, li, a{
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* img的vertical-align重置 */
+img{
+    vertical-align: top;
+}
+
+ul, ol, li {
+    list-style: none;
+}

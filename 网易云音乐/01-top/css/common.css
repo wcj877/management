@@ -1,0 +1,72 @@
+.wrapper-01{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.wrapper-02{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.wrapper-03{
+    width: 982px;
+    margin: 0 auto;
+}
+
+.topbar_sprite{
+    display: inline-block;
+    background-image: url(../images/topbar.png);
+}
+
+.topbar_icon_hot{
+    width: 28px;
+    height: 19px;
+    background-position: -190px 0;
+}
+
+/* 以下是封装按钮的背景 */
+
+.btn_sprite{
+    display: inline-block;
+    background: url(../images/btn_spirite.png) no-repeat;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+}
+
+.btn_type_01_sup {
+    background-position: right -100px;
+    padding-right: 4px;
+}
+
+.btn_type_01_sub{
+    display: block;
+    background-position: 0 -59px;
+    padding-left: 4px;
+} 
+
+.btn_type_favor_sup{
+    background-position: right -1020px;
+    padding-right: 4px;
+}
+.btn_type_favor_sub{
+    display: inline-block;
+    background-position: 0 -977px;
+    padding-left: 28px;
+}
+
+/* icon_sprite */
+.icon_sprite{
+    display: inline-block;
+    background-image: url(../images/icon-sprite02.png);
+}
+
+.icon_sprite_music{
+    background-position: 0 -24;
+}
+
+.icon_sprite_play_01{
+    background-position: 0 0;
+    width: 16px;
+    height: 17px;
+}
